@@ -52,11 +52,11 @@ keypoints:
     > {: .source}
     {: .callout}
 
-9. Open up a terminal window, and navigate to your local project directory:
+9. Open up a terminal window, and navigate to the `BIDS-Lossless-EEG` directory:
 
-    `>> cd path/to/project/directory/Face13`
+    `>> cd path/to/project/directory/Face13/derivatives/BIDS-Lossless-EEG`
 
-10. In the terminal, list all the data files you’d like to run through the QC procedure. This can be done using the find command. If using the BIDS directory structure, simply type:
+10. In the terminal, list all the data files you would like to run through the QC procedure. This can be done using the find command. If using the BIDS directory structure, simply type:
 
     `>> find . -name "*.edf"`
 
