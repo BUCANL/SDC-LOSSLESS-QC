@@ -35,7 +35,7 @@ keypoints:
 
     ![Vised Config Dropdown Menu]({{ page.root }}/fig/visedconfig_dropdown.png)
 
-5. Add the vised configuration file by clicking `| Load vised config |` and then navigate to the config folder (`derivatives/BIDS-Lossless-EEG/code/config/`). Select the file named `vised_config_qc.cfg`, and click `| OK |`. The vised configuration file will load certain settings that are preferable for the QC procedure.
+5. Add the vised configuration file by clicking `| Load vised config |` and then navigate to the config folder (`derivatives/BIDS-Lossless-EEG/code/config/`). Select the file named `vised_config_qc.cfg`, and click `| OK |`. The vised configuration file will load certain settings that are preferable for the quality control (QC) procedure.
 
     ![Vised Config Menu]({{ page.root }}/fig/visedconfig.png)
 
@@ -52,17 +52,17 @@ keypoints:
     > {: .source}
     {: .callout}
 
-9. Open up a terminal window, and navigate to the `BIDS-Lossless-EEG` directory:
+9. In the **path** field in the **Run History Template Batch** window, type `derivatives/BIDS-Lossless-EEG`.
+
+10. Open up a terminal window, and navigate to the `BIDS-Lossless-EEG` directory:
 
     `>> cd path/to/project/directory/Face13/derivatives/BIDS-Lossless-EEG`
 
-10. In the terminal, list all the data files you would like to run through the QC procedure. This can be done using the find command. If using the BIDS directory structure, simply type:
+11. In the terminal, list all the data files you would like to run through the QC procedure. This can be done using the find command. If using the BIDS directory structure, simply type:
 
     `>> find . -name "*.edf"`
 
-11. This will print a list of all the files that have run through the pipeline, which you can then copy straight from the terminal into the **file** field in the **Run History Template Batch** window, with one path/filename per line.
-
-12. In the **path** field in the **Run History Template Batch** window, type `derivatives/BIDS-Lossless-EEG`. The history template batch window should look like this:
+12. This will print a list of all the files that have run through the pipeline, which you can then copy straight from the terminal into the **file** field in the **Run History Template Batch** window, with one path/filename per line. The history template batch window should look like this:
 
     ![RunHTB]({{ page.root }}/fig/runhtb.png)
 
@@ -70,7 +70,7 @@ keypoints:
 
 14. Once you click `| Ok |`, the QC windows will open for your first file. The files will open in alphabetical order. Several windows will open for each file you QC, including: 
 
-    <span style="color:red">A.</span> A window that displays the **component** EEG data. This is the window that you will be interacting with as you QC. You will be making your decisions in this window by adding or removing a manual mark for components or time points. Components are sorted by the percent data variance accounted for, with the top components accounting for a greater percentage of the channel data. To scroll through the data, use the `<<` and `>>` buttons in this window. These buttons will scroll both the component EEG data and the channel EEG data windows (Figure C). Your decisions can be saved by clicking the `| Update EEG Structure |` button in **component** EEG data window.
+    <span style="color:red">A.</span> A window that displays the **component** EEG data. This is the window that you will be interacting with as you QC. You will be making your decisions in this window by adding or removing a manual mark for components or time points. Components are sorted by the percent data variance accounted for, with the top components accounting for a greater percentage of the channel data. To scroll through the data, use the `<<` and `>>` buttons in this window. These buttons will scroll both the component EEG data and the channel EEG data windows (Figure C). Your decisions can be saved by clicking the `| Update EEG Structure |` button in the **component** EEG data window.
 
     <span style="color:green">B.</span> A figure that displays the ICLabel classification breakdown for each component. This figure will not be loaded when running the `qc_lite.htb` script.
 
@@ -93,7 +93,7 @@ keypoints:
     ![QC Screen Right]({{ page.root }}/fig/qc_screen_right.png)
     ![QC Topo Popup]({{ page.root }}/fig/qc_topo_popup.png)
 
-> ## Note
+> ## Exiting the QC Procedure
 > If you would like to cancel the QC procedure at anytime **without** saving the progress, you will need to force quit the QC script by typing **[Ctrl + C]** in the MATLAB command window.
 >
 > {: .source}

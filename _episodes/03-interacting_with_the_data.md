@@ -1,9 +1,9 @@
 ---
 title: "Interacting with the Data"
 teaching: 15
-exercises: 45
+exercises: 0
 questions:
-- "How do I actually interact with the data during quality control?"
+- "How do I interact with the data during quality control?"
 objectives:
 - "Understand how to use the keyboard and mouse to interact with the EEG scroll plots to flag and unflag components and periods of time."
 keypoints:
