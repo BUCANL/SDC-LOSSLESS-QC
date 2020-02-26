@@ -9,9 +9,9 @@ objectives:
 - "Understand how to start the quality control procedure."
 - "Become familiar with the figures displayed during quality control."
 keypoints:
-- "The input for running the QC script is `*.edf` files."
+- "The input for running the QC script is `*_ll.set` files."
 - "The QC procedure is a manual review of the decsions the pipeline made. The annontations in the **component** EEG data scroll can be edited to update decisions about the data."
-- "The output is `*desc-qc*` files which contain the annotation information."
+- "The output is `*_qcr.set*` files which contain the annotation information."
 ---
 
 1. Open MATLAB (pre-2014b works fastest) and change your **Current Folder** by navigating to the Lossless pipeline root directory (in this case, `Face13`).
@@ -46,23 +46,21 @@ keypoints:
 
 8. Click `| History File |` and add the `qc.htb` script located in `derivatives/BIDS-Lossless-EEG/code/scripts/`.
 
-9. Open up a terminal window, and navigate to your `BIDS-Lossless-EEG` directory:
+9. Open up a terminal window, and navigate to your project root directory directory:
 
-    `>> cd path/to/project/directory/Face13/derivatives/BIDS-Lossless-EEG`
+    `>> cd path/to/project/directory/Face13`
 
 10. In the terminal, list all the data files you’d like to run through the pipeline. This can be done using the find command. If using the BIDS directory structure, simply type:
 
-    `>> find . -name "*.edf"`
+    `>> find . -name "*_ll.set"`
 
-11. This will print a list of all the files that have run through the pipeline, which you can then copy straight from the terminal into the **file** field in the **Run History Template Batch** window, with one path/filename per line.
-
-12. In the **path** field in the **Run History Template Batch** window, type `derivatives/BIDS-Lossless-EEG`. The history template batch window should look like this:
+11. This will print a list of all the files that have run through the pipeline, which you can then copy straight from the terminal into the **file** field in the **Run History Template Batch** window, with one path/filename per line. The history template batch window should look like this:
 
     ![RunHTB]({{ page.root }}/fig/runhtb.png)
 
-13. Click `| Ok |` to start the QC batch process.
+12. Click `| Ok |` to start the QC batch process.
 
-14. Once you click `| Ok |`, the QC windows will open for your first file. The files will open in alphabetical order. Several windows will open for each file you QC, including: 
+13. Once you click `| Ok |`, the QC windows will open for your first file. The files will open in alphabetical order. Several windows will open for each file you QC, including: 
 
     <span style="color:red">A.</span> A window that displays the **component** EEG data. This is the window that you will be interacting with as you QC. You will be making your decisions in this window by adding or removing a manual mark for components or time points. Components are sorted by the percent data variance accounted for, with the top components accounting for a greater percentage of the channel data. To scroll through the data, use the `<<` and `>>` buttons in this window. These buttons will scroll both the component EEG data and the channel EEG data windows (Figure C). Your decisions can be saved by clicking the `| Update EEG Structure |` button in **component** EEG data window.
 
