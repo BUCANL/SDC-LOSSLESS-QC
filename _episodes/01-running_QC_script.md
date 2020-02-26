@@ -12,7 +12,6 @@ keypoints:
 - "The input for running the QC script is `*_ll.set` files."
 - "The QC procedure is a manual review of the decsions the pipeline made. The annontations in the **component** EEG data scroll can be edited to update decisions about the data."
 - "The output is `*_qcr.set*` files which contain the annotation information."
-
 ---
 
 1. Open MATLAB (pre-2014b works fastest) and change your **Current Folder** by navigating to the Lossless pipeline root directory (in this case, `Face13`).
@@ -47,9 +46,8 @@ keypoints:
 
 8. Click `| History File |` and add the `qc.htb` script located in `derivatives/BIDS-Lossless-EEG/code/scripts/`.
 
-<<<<<<< HEAD
+
 9. Open up a terminal window, and navigate to your project root directory directory:
-=======
     > ## Note 
     > The `qc.htb` script is optimized to be run with a three monitor setup. If you do not have access to three monitors you should load the `qc_lite.htb` script located in `derivatives/BIDS-Lossless-EEG/code/scripts/`.      
     > 
@@ -59,7 +57,6 @@ keypoints:
 9. In the **path** field in the **Run History Template Batch** window, type `derivatives/BIDS-Lossless-EEG`.
 
 10. Open up a terminal window, and navigate to the `BIDS-Lossless-EEG` directory:
->>>>>>> 61cb244fcf50531a400707a3cebf33ffabb24864
 
     `>> cd path/to/project/directory/Face13`
 
@@ -67,11 +64,9 @@ keypoints:
 
     `>> find . -name "*_ll.set"`
 
-<<<<<<< HEAD
 11. This will print a list of all the files that have run through the pipeline, which you can then copy straight from the terminal into the **file** field in the **Run History Template Batch** window, with one path/filename per line. The history template batch window should look like this:
-=======
+
 12. This will print a list of all the files that have run through the pipeline, which you can then copy straight from the terminal into the **file** field in the **Run History Template Batch** window, with one path/filename per line. The history template batch window should look like this:
->>>>>>> 61cb244fcf50531a400707a3cebf33ffabb24864
 
     ![RunHTB]({{ page.root }}/fig/runhtb.png)
 
