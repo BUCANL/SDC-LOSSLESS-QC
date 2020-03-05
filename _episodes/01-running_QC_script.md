@@ -54,25 +54,23 @@ keypoints:
     > {: .source}
     {: .callout}
 
-9. In the **path** field in the **Run History Template Batch** window, type `derivatives/BIDS-Lossless-EEG`.
+10. In the **path** field in the **Run History Template Batch** window, type `derivatives/BIDS-Lossless-EEG`.
 
-10. Open up a terminal window, and navigate to the `BIDS-Lossless-EEG` directory:
+11. Open up a terminal window, and navigate to the `BIDS-Lossless-EEG` directory:
 
     `>> cd path/to/project/directory/Face13`
 
-11. In the terminal, list all the data files you would like to run through the QC procedure. This can be done using the find command. If using the BIDS directory structure, simply type:
+12. In the terminal, list all the data files you would like to run through the QC procedure. This can be done using the find command. If using the BIDS directory structure, simply type:
 
     `>> find . -name "*_ll.set"`
 
-11. This will print a list of all the files that have run through the pipeline, which you can then copy straight from the terminal into the **file** field in the **Run History Template Batch** window, with one path/filename per line. The history template batch window should look like this:
-
-12. This will print a list of all the files that have run through the pipeline, which you can then copy straight from the terminal into the **file** field in the **Run History Template Batch** window, with one path/filename per line. The history template batch window should look like this:
+13. This will print a list of all the files that have run through the pipeline, which you can then copy straight from the terminal into the **file** field in the **Run History Template Batch** window, with one path/filename per line. The history template batch window should look like this:
 
     ![RunHTB]({{ page.root }}/fig/runhtb.png)
 
-12. Click `| Ok |` to start the QC batch process.
+14. Click `| Ok |` to start the QC batch process.
 
-13. Once you click `| Ok |`, the QC windows will open for your first file. The files will open in alphabetical order. Several windows will open for each file you QC, including: 
+15. Once you click `| Ok |`, the QC windows will open for your first file. The files will open in alphabetical order. Several windows will open for each file you QC, including: 
 
     <span style="color:red">A.</span> A window that displays the **component** EEG data. This is the window that you will be interacting with as you QC. You will be making your decisions in this window by adding or removing a manual mark for components or time points. Components are sorted by the percent data variance accounted for, with the top components accounting for a greater percentage of the channel data. To scroll through the data, use the `<<` and `>>` buttons in this window. These buttons will scroll both the component EEG data and the channel EEG data windows (Figure C). Your decisions can be saved by clicking the `| Update EEG Structure |` button in the **component** EEG data window.
 
