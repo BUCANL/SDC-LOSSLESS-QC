@@ -18,26 +18,26 @@ Now that we are familiar with the quality control procedure, we can practice int
 
 2. Open EEGLAB by typing the following into the command window:
 
-    ```matlab
-    >> addpath derivatives/BIDS-Lossless-EEG/code/install
-    >> lossless_path
-    >> eeglab
-    ```
+```matlab
+>> addpath derivatives/BIDS-Lossless-EEG/code/install
+>> lossless_path
+>> eeglab
+```
 
 3. If you are using an older version of MATLAB (pre-2014b), you will need to set the default figure renderer to OpenGL by typing the following into the command window:
 
-   
-    ```matlab
-    >> set(0,'DefaultFigureRenderer','OpenGL');
-    ```
+
+```matlab
+>> set(0,'DefaultFigureRenderer','OpenGL');
+```
 
 4. In the main EEGLAB window, navigate to **File->Vised Configuration**. 
 
-    ![Vised Config Dropdown Menu]({{ page.root }}/fig/visedconfig_dropdown.png)
+![Vised Config Dropdown Menu]({{ page.root }}/fig/visedconfig_dropdown.png)
 
-5. Add the vised configuration file by clicking `| Load vised config |` and then navigate to the config folder (`derivatives/BIDS-Lossless-EEG/code/config/`). Select the file named `vised_config_qc.cfg`, and click `| OK |`. The vised configuration file will load certain settings that are preferable for the QC procedure.
+5. Add the vised configuration file by clicking `| Load vised config |` and then navigate to the config folder (`derivatives/BIDS-Lossless-EEG/code/config/`). Select the file named `vised_config_qc.cfg`, and click `| OK |`. The vised configuration file will load certain settings that are preferable for the quality control (QC) procedure.
 
-    ![Vised Config Menu]({{ page.root }}/fig/visedconfig.png)
+![Vised Config Menu]({{ page.root }}/fig/visedconfig.png)
 
 6. In the main EEGLAB window, navigate to **File->Batch->Run History Template Batch**.
 
@@ -46,23 +46,21 @@ Now that we are familiar with the quality control procedure, we can practice int
 
 8. Click `| History File |` and add the `qc.htb` script located in `derivatives/BIDS-Lossless-EEG/code/scripts/`.
 
-    > ## Note 
-    > The `qc.htb` script is optimized to be run with a three monitor setup. If you do not have access to three monitors you should load the `qc_lite.htb` script located in `derivatives/BIDS-Lossless-EEG/code/scripts/`.      
-    > 
-    > {: .source}
-    {: .callout}
+> ## Note 
+> The `qc.htb` script is optimized to be run with a three monitor setup. If you do not have access to three monitors you should load the `qc_lite.htb` script located in `derivatives/BIDS-Lossless-EEG/code/scripts/`.      
+> 
+> {: .source}
+{: .callout}
 
-9. In the **path** field in the **Run History Template Batch** window, type `derivatives/BIDS-Lossless-EEG`.
+9. Open up a terminal window, and navigate to your project root directory directory:
 
-10. Open up a terminal window, and navigate to the `BIDS-Lossless-EEG` directory:
+`>> cd path/to/project/directory/Face13`
 
-    `>> cd path/to/project/directory/Face13/derivatives/BIDS-Lossless-EEG`
+10. In the terminal, list all the data files you would like to run through the QC procedure. This can be done using the find command. If using the BIDS directory structure, simply type:
 
-11. In the terminal, list all the data files you would like to run through the QC procedure. This can be done using the find command. If using the BIDS directory structure, simply type:
+`>> find derivatives/BIDS-Lossless-EEG -name "*_ll.set"`
 
-    `>> find . -name "*.edf"`
-
-12. This will print a list of all the files that have run through the pipeline. For this exercise, copy the edf file for **sub-002** from the terminal into the **file** field in the **Run History Template Batch** window. The history template batch window should look like this:
+12. This will print a list of all the files that have run through the pipeline. For this exercise, copy the .set file for **sub-002** from the terminal into the **file** field in the **Run History Template Batch** window. The history template batch window should look like this:
 
     ![RunHTB]({{ page.root }}/fig/runhtb_qc_sub2.png)
 
