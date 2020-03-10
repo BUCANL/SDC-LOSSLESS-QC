@@ -11,7 +11,7 @@ objectives:
 keypoints:
 - "The input for running the QC script is `*_ll.set` files."
 - "The QC procedure is a manual review of the decsions the pipeline made. The annontations in the **component** EEG data scroll can be edited to update decisions about the data."
-- "The output is `*_qcr.set*` files which contain the annotation information."
+- "The output is `*_qcr.set*` files which contain the updated annotation information."
 ---
 
 1. Open MATLAB (pre-2014b works fastest) and change your **Current Folder** by navigating to the Lossless pipeline root directory (in this case, `Face13`).
@@ -52,7 +52,7 @@ keypoints:
 > {: .source}
 {: .callout}
 
-9. Open up a terminal window, and navigate to your project root directory directory:
+9. Open up a terminal window, and navigate to your project root directory:
 
     `>> cd path/to/project/directory/Face13`
 

@@ -7,7 +7,7 @@ questions:
 objectives:
 - "Practice interacting with the data during the quality control procedure."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "The *_qcr.set file will contain the updated annotations and is ready for further processing such as segmentation.)"
 ---
 
 ## Running the Quality Control Script 
@@ -18,26 +18,26 @@ Now that we are familiar with the quality control procedure, we can practice int
 
 2. Open EEGLAB by typing the following into the command window:
 
-```matlab
->> addpath derivatives/BIDS-Lossless-EEG/code/install
->> lossless_path
->> eeglab
-```
+    ```matlab
+    >> addpath derivatives/BIDS-Lossless-EEG/code/install
+    >> lossless_path
+    >> eeglab
+    ```
 
 3. If you are using an older version of MATLAB (pre-2014b), you will need to set the default figure renderer to OpenGL by typing the following into the command window:
 
 
-```matlab
->> set(0,'DefaultFigureRenderer','OpenGL');
-```
+    ```matlab
+    >> set(0,'DefaultFigureRenderer','OpenGL');
+    ```
 
 4. In the main EEGLAB window, navigate to **File->Vised Configuration**. 
 
-![Vised Config Dropdown Menu]({{ page.root }}/fig/visedconfig_dropdown.png)
+    ![Vised Config Dropdown Menu]({{ page.root }}/fig/visedconfig_dropdown.png)
 
 5. Add the vised configuration file by clicking `| Load vised config |` and then navigate to the config folder (`derivatives/BIDS-Lossless-EEG/code/config/`). Select the file named `vised_config_qc.cfg`, and click `| OK |`. The vised configuration file will load certain settings that are preferable for the quality control (QC) procedure.
 
-![Vised Config Menu]({{ page.root }}/fig/visedconfig.png)
+    ![Vised Config Menu]({{ page.root }}/fig/visedconfig.png)
 
 6. In the main EEGLAB window, navigate to **File->Batch->Run History Template Batch**.
 
@@ -46,19 +46,19 @@ Now that we are familiar with the quality control procedure, we can practice int
 
 8. Click `| History File |` and add the `qc.htb` script located in `derivatives/BIDS-Lossless-EEG/code/scripts/`.
 
-> ## Note 
-> The `qc.htb` script is optimized to be run with a three monitor setup. If you do not have access to three monitors you should load the `qc_lite.htb` script located in `derivatives/BIDS-Lossless-EEG/code/scripts/`.      
-> 
-> {: .source}
-{: .callout}
+    > ## Note 
+    > The `qc.htb` script is optimized to be run with a three monitor setup. If you do not have access to three monitors you should load the `qc_lite.htb` script located in `derivatives/BIDS-Lossless-EEG/code/scripts/`.      
+    > 
+    > {: .source}
+    {: .callout}
 
-9. Open up a terminal window, and navigate to your project root directory directory:
+9. Open up a terminal window, and navigate to your project root directory:
 
-`>> cd path/to/project/directory/Face13`
+    `>> cd path/to/project/directory/Face13`
 
 10. In the terminal, list all the data files you would like to run through the QC procedure. This can be done using the find command. If using the BIDS directory structure, simply type:
 
-`>> find derivatives/BIDS-Lossless-EEG -name "*_ll.set"`
+    `>> find derivatives/BIDS-Lossless-EEG -name "*_ll.set"`
 
 12. This will print a list of all the files that have run through the pipeline. For this exercise, copy the .set file for **sub-002** from the terminal into the **file** field in the **Run History Template Batch** window. The history template batch window should look like this:
 
@@ -68,7 +68,7 @@ Now that we are familiar with the quality control procedure, we can practice int
 
 ## Interacting with the Data
 
-Once all of the topographies have loaded, we can begin interacting with and making decisions about the data. In a new study, the first thing you would look at are the decisions the pipeline has made about your data. These decisions are made based on parameters in the batch configuration files. Parameters have already been optimized for the Face13 dataset but for new studies, the pipeline decision criteria has to checked. You want to make sure that you agree with the decisions that are being made. If you do not agree, parameters can be edited to change these decisions. Information on editing parameters can be found in [this](link) tutorial.
+Once all of the topographies have loaded, we can begin interacting with and making decisions about the data. In a new study, the first thing you would look at are the decisions the pipeline has made about your data. These decisions are made based on parameters in the batch configuration files. Parameters have already been optimized for the Face13 dataset but for new studies, the pipeline decision criteria has to checked. You want to make sure that you agree with the decisions that are being made. If you do not agree, parameters can be edited to change these decisions. Information on decision criteria and editing parameters can be found in the [Parameters tutorial](https://bucanl.github.io/SDC-LOSSLESS-PARAMS/).
 
 1. The main window that we will be interacting with during QC is the **component** data window. In this window, locate component 3. This component contains noise from one channel. The topography for this component allows us to identify the general location of this noisy channel.
 
@@ -114,7 +114,7 @@ Once all of the topographies have loaded, we can begin interacting with and maki
     > {: .source}
     {: .callout}
 
-8. When you get to the end of the file, click the `Update EEG Structure` button on the component window. This will save the annotations that you edited and will output 3 files (*_desc-qc_annotations.json, *_desc-qc_annotations.mat, *_desc-qc_annotations.tsv). If you were running a batch of multiple files through the QC proceudre, pressing the `Update EEG Structure` button would save and close the current file and load the next file.
+8. When you get to the end of the file, click the `Update EEG Structure` button on the component window. This will save the annotations that you edited and will output a *_qcr.set file. If you were running a batch of multiple files through the QC proceudre, pressing the `Update EEG Structure` button would save and close the current file and load the next file.
 
 
 {% include links.md %}
