@@ -19,7 +19,7 @@ Now that we are familiar with the quality control procedure, we can practice int
 2. Open EEGLAB by typing the following into the command window:
 
     ```matlab
-    >> addpath derivatives/BIDS-Lossless-EEG/code/install
+    >> addpath derivatives/EEG-IP-L/code/install
     >> lossless_path
     >> eeglab
     ```
@@ -35,19 +35,19 @@ Now that we are familiar with the quality control procedure, we can practice int
 
     ![Vised Config Dropdown Menu]({{ page.root }}/fig/visedconfig_dropdown.png)
 
-5. Add the vised configuration file by clicking `| Load vised config |` and then navigate to the config folder (`derivatives/BIDS-Lossless-EEG/code/config/`). Select the file named `vised_config_qc.cfg`, and click `| OK |`. The vised configuration file will load certain settings that are preferable for the quality control (QC) procedure.
+5. Add the vised configuration file by clicking `| Load vised config |` and then navigate to the config folder (`derivatives/EEG-IP-L/code/config/`). Select the file named `vised_config_qc.cfg`, and click `| OK |`. The vised configuration file will load certain settings that are preferable for the quality control (QC) procedure.
 
     ![Vised Config Menu]({{ page.root }}/fig/visedconfig.png)
 
 6. In the main EEGLAB window, navigate to **File->Batch->Run History Template Batch**.
 
 
-7. In the **Run History Template Batch** window, add a Context configuration file by clicking `| Load context config |`. The default file will be sufficient for this task: `derivatives/BIDS-Lossless-EEG/code/config/contextconfig.cfg`. 
+7. In the **Run History Template Batch** window, add a Context configuration file by clicking `| Load context config |`. The default file will be sufficient for this task: `derivatives/EEG-IP-L/code/config/contextconfig.cfg`. 
 
-8. Click `| History File |` and add the `qc.htb` script located in `derivatives/BIDS-Lossless-EEG/code/scripts/`.
+8. Click `| History File |` and add the `qc.htb` script located in `derivatives/EEG-IP-L/code/scripts/`.
 
     > ## Note 
-    > The `qc.htb` script is optimized to be run with a three monitor setup. If you do not have access to three monitors you should load the `qc_lite.htb` script located in `derivatives/BIDS-Lossless-EEG/code/scripts/`.      
+    > The `qc.htb` script is optimized to be run with a three monitor setup. If you do not have access to three monitors you should load the `qc_lite.htb` script located in `derivatives/EEG-IP-L/code/scripts/`.      
     > 
     > {: .source}
     {: .callout}
@@ -58,7 +58,7 @@ Now that we are familiar with the quality control procedure, we can practice int
 
 10. In the terminal, list all the data files you would like to run through the QC procedure. This can be done using the find command. If using the BIDS directory structure, simply type:
 
-    `>> find derivatives/BIDS-Lossless-EEG -name "*_ll.set"`
+    `>> find derivatives/EEG-IP-L -name "*_ll.set"`
 
 12. This will print a list of all the files that have run through the pipeline. For this exercise, copy the .set file for **sub-002** from the terminal into the **file** field in the **Run History Template Batch** window. The history template batch window should look like this:
 

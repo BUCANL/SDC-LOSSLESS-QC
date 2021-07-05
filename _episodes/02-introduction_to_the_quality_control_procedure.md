@@ -17,7 +17,7 @@ keypoints:
 
 The Lossless pipeline is an EEG data preprocessing technique that relies on independent component analysis (ICA). The ICA is used to isolate arefacts into independent components that can be marked for rejection. Additionally, cortical components can be further investigated in more complex types of analyses. Despite the automated nature of the technique up to this point, the decisions made by the pipeline need to be manually reviewed. Quality control (QC) is the procedure of manually reviewing data.
 
-During QC, a reviewer will be interacting with the annotations created by the pipeline. These annotations are split up into three groups: channel, component, and time annotations. Reviewing them is accomplished by scrolling through the data and either making changes to the pipeline's decisions, or adding additional annotations. These decisions are made by the main [pipeline scripts](https://github.com/BUCANL/BIDS-Lossless-EEG/wiki/Pipeline-Scripts) such as **s01** and are customized by their accompanying batch configuration files.
+During QC, a reviewer will be interacting with the annotations created by the pipeline. These annotations are split up into three groups: channel, component, and time annotations. Reviewing them is accomplished by scrolling through the data and either making changes to the pipeline's decisions, or adding additional annotations. These decisions are made by the main [pipeline scripts](https://github.com/BUCANL/EEG-IP-L/wiki/Pipeline-Scripts) such as **s01** and are customized by their accompanying batch configuration files.
 
 ## Artefacts
 
